@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MyRadio</string>
+    <string name="btnHrd">Hard and Heavy</string>
+    <string name="btnBald">Rock Ballads</string>
+    <string name="btnRok">New Rock</string>
+    <string name="btnAir">On Air</string>
+    <string name="btnPlay">PLAY</string>
+    <string name="btnPause">PAUSE</string>
+    <string name="btnResume">RESUME</string>
+    <string name="btnStop">STOP</string>
+    <string name="info_text">ABOUT ARTIST</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="desc">description</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

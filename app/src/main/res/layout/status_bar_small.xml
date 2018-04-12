@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/status_bg"
+    android:scaleType="center"
+    >
+
+        <ImageView
+        android:id="@+id/status_bar_icon"
+        android:layout_width="@dimen/status_bar_album_art"
+        android:layout_height="@dimen/status_bar_album_art"
+        android:src="@drawable/st_logo"
+        android:visibility="visible"
+        />
+
+    <ImageButton
+        android:id="@+id/status_bar_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:background="@null"
+        android:contentDescription="@string/desc"
+        android:scaleType="fitCenter"
+        android:src="@drawable/button_pause" />
+
+
+    <ImageButton
+        android:id="@+id/status_bar_play"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:background="@null"
+        android:contentDescription="@string/desc"
+        android:scaleType="fitCenter"
+        android:src="@drawable/button_play" />
+
+    <ImageButton
+        android:id="@+id/status_bar_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:contentDescription="@string/desc"
+        android:src="@drawable/button_stop"
+        android:scaleType="fitCenter"
+        android:layout_weight="1"
+        android:layout_gravity="bottom"
+        android:background="@null"/>
+
+    <ImageButton
+        android:id="@+id/status_bar_close"
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
+        android:layout_weight="1"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/st_close_btn" />
+
+</LinearLayout>
