@@ -108,9 +108,8 @@ public class HeavyActivity extends Activity implements Constants.ACTION, Service
     @Override
     public void onServiceDisconnected(ComponentName name) {
         Log.d(LOG_TAG,"onServiceDisconnected" );
-
-
     }
+
     @Override
     protected void onStart() {
         super.onStart();

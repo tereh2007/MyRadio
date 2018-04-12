@@ -49,13 +49,16 @@ public class NotificationService extends Service implements MediaPlayer.OnPrepar
                 .build ();
         //** create MediaSession
         mMediaSession = new MediaSession (this, Constants.SESSION_TAG);
+
         //** Set the callback to receive updates for the MediaSession
         mMediaSession.setCallback ( mMediaSessionCallback );
+
         //** this session is currently active and ready to receive commands
         mMediaSession.setActive ( true );
+
         //** int FLAG_HANDLES_MEDIA_BUTTONS - Set this flag on the session to indicate
         // that it can handle media button events.
-        //** int FLAG_HANDLES_TRANSPORT_CONTROLS - Set this flag on the session to indicate
+        // int FLAG_HANDLES_TRANSPORT_CONTROLS - Set this flag on the session to indicate
         // that it handles transport control commands through its MediaSession.Callback.
         mMediaSession.setFlags ( MediaSession.FLAG_HANDLES_TRANSPORT_CONTROLS |
                 MediaSession.FLAG_HANDLES_MEDIA_BUTTONS );
@@ -79,7 +82,9 @@ public class NotificationService extends Service implements MediaPlayer.OnPrepar
     //*** Media PLayer
     @Override
     public void onPrepared(MediaPlayer mp) {
+
         Log.d(LOG_TAG,"onPrepared" );
+
         mMediaPlayer.start();
         mPlaybackState = new PlaybackState.Builder()
                 .setState(PlaybackState.STATE_PLAYING, 0, 1.0f)
@@ -89,7 +94,9 @@ public class NotificationService extends Service implements MediaPlayer.OnPrepar
     }
     @Override
     public void onCompletion(MediaPlayer mp) {
+
         Log.d(LOG_TAG,"onCompletion" );
+
         mPlaybackState = new PlaybackState.Builder (  )
                 .setState(PlaybackState.STATE_NONE, 0, 1.0f)
                 .build();
@@ -126,7 +133,9 @@ public class NotificationService extends Service implements MediaPlayer.OnPrepar
         @SuppressLint("SwitchIntDef")
         @Override
         public void onPlayFromUri(Uri uri , Bundle extras) {
+
             Log.d(LOG_TAG,"onPlayFromUri" );
+
             try {
                 switch (mPlaybackState.getState ()) {
                     case PlaybackState.STATE_PLAYING: // =3
@@ -198,7 +207,9 @@ public class NotificationService extends Service implements MediaPlayer.OnPrepar
        }
     };
     private void updateNotification() {
+
         Log.d(LOG_TAG,"updateNotification" );
+
         Notification.Action playPauseAction = mPlaybackState.getState () == PlaybackState.STATE_PLAYING ?
                 createAction(android.R.drawable.ic_media_pause, "pause", ACTION_PAUSE):
                 createAction(android.R.drawable.ic_media_play, "play", ACTION_PLAY);
@@ -238,13 +249,16 @@ public class NotificationService extends Service implements MediaPlayer.OnPrepar
         return mBinder;
     }
     public MediaSession.Token getMediaSessionToken() {
+
         Log.d(LOG_TAG,"MediaSessionToken" );
+
         return mMediaSession.getSessionToken();
 
     }
     //***************************
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+
         Log.d(LOG_TAG,"onStartCommand" );
 
         if (intent != null && intent.getAction() != null) {
